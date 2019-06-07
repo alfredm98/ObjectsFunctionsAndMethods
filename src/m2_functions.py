@@ -35,6 +35,7 @@ def main():
 
     turtle1()
     turtle4()
+    turtle5and6()
     turtle3()
     turtle2()
     turtle2()
@@ -114,6 +115,22 @@ def turtle4():
     fred.forward(100)
     fred.backward(200)
     fred.right(360)
+
+
+def turtle5and6():
+    """
+    Creates two Simple Trutles
+    These guys will also move around a bit
+    """
+    fredrick = rg.SimpleTurtle()
+    fredrick.pen = rg.Pen('Pink',25)
+    fredrick.begin_fill()
+    fredrick.draw_square(25)
+    fredrick.end_fill()
+
+    freddie = rg. SimpleTurtle()
+    freddie.pen = rg.Pen('Brown',24)
+    freddie.draw_square(25)
 
 
 ########################################################################
@@ -196,7 +213,7 @@ def turtle4():
 
 ########################################################################
 #
-# TODO: 5.
+# DONE: 5.
 #   The previous two TODOs IMPLEMENTED a function (TO DO 3)
 #   and TESTED that function (TO DO 4).
 #
