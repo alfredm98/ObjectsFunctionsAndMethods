@@ -14,7 +14,9 @@ import rosegraphics as rg
 def main():
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
-    two_circles()
+    #two_circles()
+    #circle_and_rectangle()
+    lines()
 
 
 def two_circles():
@@ -78,13 +80,32 @@ def circle_and_rectangle():
     """
     window = rg.RoseWindow()
     point1 = rg.Point(100,100)
+    point2 = rg.Point(200,200)
     circle1 = rg.Circle(point1,20)
+    circle1.outline_thickness = 5
     circle1.fill_color = 'blue'
     circle1.attach_to(window)
+
+    rectangle = rg.Rectangle(point1,point2)
+    rectangle.outline_thickness = 5
+    rectangle.attach_to(window)
+
+    print(circle1.outline_thickness)
+    print(circle1.fill_color)
+    print(circle1.center)
+    print(circle1.center.x)
+    print(circle1.center.y)
+
+    print(rectangle.outline_thickness)
+    print(rectangle.fill_color)
+    print(rectangle.get_center())
+    print(rectangle.get_center().x)
+    print(rectangle.get_center().y)
+
     window.render()
     window.close_on_mouse_click()
     # ------------------------------------------------------------------
-    # TODO: 3. Implement this function, per its doc-string above.
+    # DONE: 3. Implement this function, per its doc-string above.
     #   -- ANY objects that meet the criteria are fine.
     # Put a statement in   main   to test this function
     #    (by calling this function).
@@ -116,8 +137,28 @@ def lines():
 
     -- Waits for the user to press the mouse, then closes the window.
     """
+    window = rg.RoseWindow()
+    point1 = rg.Point(100, 100)
+    point2 = rg.Point(200, 200)
+    point3 = rg.Point(100,200)
+    point4 = rg.Point(200,100)
+
+
+    line1 = rg.Line(point1,point2)
+    line2 = rg.Line(point3,point4)
+    line2.thickness = 10
+
+    line1.attach_to(window)
+    line2.attach_to(window)
+
+    print(line2.get_midpoint())
+    print(line2.get_midpoint().x)
+    print(line2.get_midpoint().y)
+
+    window.render()
+    window.close_on_mouse_click()
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     # ------------------------------------------------------------------
 
 
