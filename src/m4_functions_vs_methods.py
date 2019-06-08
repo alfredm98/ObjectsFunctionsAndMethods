@@ -70,8 +70,6 @@ def main():
     and waits for the user to click anywhere in the window to close it.
     """
     window = rg.TurtleWindow()
-    try_methods()
-    try_functions()
     # Make the animation go much faster.
     #   First number:  bigger means faster.
     #   Second number: bigger means slower.
@@ -83,7 +81,9 @@ def main():
     turtle3()
 
     # When the TODOs ask you to test YOUR code, put YOUR tests here:
-
+    try_methods()
+    try_functions()
+    try_methods_and_functions()
 
     window.close_on_mouse_click()
 
@@ -193,9 +193,9 @@ def try_functions():
      -- One jumps to (100, 200), then moves (while drawing) to (0, 0)
      -- One jumps to (-50, 50), then moves (while drawing) to (100, 100)
     """
-    jump_and_move_turtle(200,100,300,30)
-    jump_and_move_turtle(100,200,0,0)
-    jump_and_move_turtle(-50,50,100,100)
+    jump_and_move_turtle(200, 100, 300, 30)
+    jump_and_move_turtle(100, 200, 0, 0)
+    jump_and_move_turtle(-50, 50, 100, 100)
 
     ####################################################################
     # DONE: 4. Implement this function, per its doc-string above.
@@ -243,8 +243,25 @@ def try_methods_and_functions():
 
       8. Draw a SQUARE whose sides are each of length 50.
     """
+    brev = rg.SimpleTurtle()
+    brev.pen = rg.Pen('blue', 5)
+    brev.backward(150)
+    brev.speed = 1
+    draw_many_squares(brev, 2, 100, 30)
+    brev.speed = 5
+    brev.pen = rg.Pen('red', 5)
+    draw_many_squares(brev, 10, 50, 15)
+    brev.speed = 100
+    brev.pen = rg.Pen('red', 35)
+    draw_many_squares(brev, 8, 300, 60)
+    brev.pen = rg.Pen('black', 3)
+    brev.backward(200)
+    brev.draw_circle(30)
+    brev.draw_square(50)
+
+
     ####################################################################
-    # TODO: 5. Implement this function, per its doc-string above.
+    # DONE: 5. Implement this function, per its doc-string above.
     #    Put a statement in   main   to test this function
     #    (by calling this function).  IMPORTANT, IMPORTANT, IMPORTANT:
     #    Keep reading the rest of this TO DO before doing the above!
